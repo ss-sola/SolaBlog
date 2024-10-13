@@ -11,7 +11,7 @@ export default defineConfig({
   srcDir: 'docs',
   outDir: 'dist',
   sitemap:{
-    hostname: 'http://127.0.0.1:5500/'
+    hostname: 'https://blog.metasola.cn/'
   },
   // cleanUrls: true,
   lastUpdated: true,
