@@ -13,7 +13,7 @@ export default defineConfig({
   sitemap:{
     hostname: 'https://blog.metasola.cn/'
   },
-  // cleanUrls: true,
+  cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
     logo:'/logo.ico',
