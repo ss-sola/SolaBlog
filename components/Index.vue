@@ -87,8 +87,18 @@ onMounted(async () => {
     // 获取黑色像素点
     let blackPixels: Pixel[] = [];
     const pixelArr=pixelData.split(',')
-    for( let i=0;i<pixelArr.length;i+=2){
-      blackPixels.push({ x: Number(pixelArr[i]), y: Number(pixelArr[i+1]), originalX: Number(pixelArr[i]), originalY: Number(pixelArr[i+1]), targetX: Number(pixelArr[i]), targetY: Number(pixelArr[i+1]) });
+    let j=0;
+    let last =0;
+    let xPixel=0;
+    for( let i=0;i<pixelArr.length;i++){
+      if(pixelArr[i]=='@'){
+        i++;
+        j++;
+        last=0
+      }
+      xPixel=last+Number(pixelArr[i])
+      blackPixels.push({ x: xPixel, y: j, originalX: xPixel, originalY: j, targetX: xPixel, targetY: j });
+      last=xPixel
     }
     // for (let i = 0; i < height; i++) {
     //   for (let j = 0; j < width; j++) {
@@ -113,8 +123,8 @@ onMounted(async () => {
       });
       // 随机移动这些像素
       affectedPixels.forEach(pixel => {
-        pixel.targetX = pixel.x + (Math.random() - 0.5) * 200;
-        pixel.targetY = pixel.y + (Math.random() - 0.5) * 200;
+        pixel.targetX = pixel.x + (Math.random() - 0.5) * 500;
+        pixel.targetY = pixel.y + (Math.random() - 0.5) * 500;
       });
 
       // 开始动画
@@ -122,7 +132,7 @@ onMounted(async () => {
     });
 
     function animatePixels(pixels: Pixel[]) {
-      const totalFrames = 20;
+      const totalFrames = 30;
       let frame = 0;
       let p = 2
       if (!ctx) return;
