@@ -26,7 +26,7 @@ layout: home
   import Index from '../components/Index.vue'
   </script>
   <style>
-  header{
+  .home{
     background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

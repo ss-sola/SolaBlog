@@ -1,4 +1,3 @@
-
 @media (min-width: 500px) {
     .VPDoc .container {
         display: flex !important;
@@ -8,32 +7,43 @@
     .VPDoc .aside {
         display: block !important;
     }
-}
-
-@media (min-width: 500px) {
-
     .VPLocalNav {
         display: none !important;
     }
+    .VPDoc>.container>.content{
+        padding: 0 20px;
+    }
+    /* .content{
+        background-color: ;
+    } */
 }
+
 
 .VPNavBarExtra {
     display: none !important;
 }
-.VPNavBarAppearance{
+
+.VPNavBarAppearance {
     display: flex !important;
 }
-.VPNavBarSocialLinks{
+
+.VPNavBarSocialLinks {
     display: flex !important;
 }
-.VPNavBarSocialLinks::before{
+
+.VPNavBarSocialLinks::before {
     height: unset !important;
 }
 
 html {
     scroll-behavior: smooth;
-  }
+}
+
 /* 当页面处于深色主题时（html 有 class="dark"） */
 html.dark .logo {
-    filter: invert(1); /* 取反色（白色） */
-  }
+    filter: invert(1);
+    /* 取反色（白色） */
+}
+.aside{
+    padding-left: 0 !important;
+}
