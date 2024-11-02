@@ -9,7 +9,7 @@ import { onMounted } from 'vue';
 
 onMounted(async () => {
   // const mat=await getCannyEdges('./1.jpg')
-  let  pixelData=await (await fetch('/data.txt')).text() 
+  let  pixelData=await (await fetch('/index/data.txt')).text() 
   const canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
     if (!canvas) return;
    
