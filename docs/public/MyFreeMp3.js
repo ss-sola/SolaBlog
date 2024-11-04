@@ -208,7 +208,7 @@ const headers = {
     "Content-Type": "application/json;charset=UTF-8",
     "origin": "https://tool.liumingye.cn",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36",
-    "Accept-Encoding": "gzip, deflate, br, zstd",
+    // "Accept-Encoding": "gzip, deflate, br, zstd",
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
 };
 function formatSearchData(data) {
@@ -340,7 +340,7 @@ function getToken(data) {
 
 module.exports = {
     platform: "MyFreeMp3",
-    version: "0.1.1",
+    version: "0.1.2",
     author: 'MetaSola',
     appVersion: ">0.1.0-alpha.0",
     srcUrl: "https://blog.metasola.cn/MyFreeMp3.js",
