@@ -257,6 +257,7 @@ function aesDecrypt(ciphertext, key, iv) {
   return decrypted.toString(CryptoJS.enc.Utf8);
 }
 module.exports = {
+  author: 'MetaSola',
   name: meta.name,
   version: 1.0,
   initWeekData: initWeekData,

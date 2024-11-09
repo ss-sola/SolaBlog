@@ -176,6 +176,7 @@ function getElementTextWithoutChildren(element) {
   return textContent
 }
 module.exports = {
+  author: 'MetaSola',
   name: meta.name,
   version: 1.0,
   getDetailData: getDetailData,

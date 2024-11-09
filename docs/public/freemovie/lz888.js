@@ -111,6 +111,7 @@ const play = async function (option) {
 
 
 module.exports = {
+    author: 'MetaSola',
     name: meta.name,
     version: 1.0,
     getDetailData: getDetailData,
