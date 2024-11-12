@@ -1,8 +1,13 @@
 {
-    "version":"0.1.0",
+    "version":"0.1.1",
     "name":"FreeMovie",
     "description":"FreeMovie",
     "author":"MetaSola",
     "url":"https://blog.metasola.cn/freemovie/FreeMovie.apk",
-    "license":"MIT"
+    "license":"MIT",
+    "content":[
+        "优化了全屏播放的效果",
+        "修复历史记录阴影遮罩问题",
+        "添加了新的插件，订阅地址：https://blog.metasola.cn/freemovie/source.json"
+      ]
 }
