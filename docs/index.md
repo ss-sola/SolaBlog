@@ -23,14 +23,14 @@ layout: home
 #     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 <script setup>
-  import Index from '../components/Index.vue'
-  </script>
-  <style>
-  .home{
-    background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  }
-  </style>
-<Index />
+import Rain from '../components/Rain.vue'
+</script>
+<style>
+.home{
+  background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+</style>
+<Rain />
 

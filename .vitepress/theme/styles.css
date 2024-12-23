@@ -34,7 +34,12 @@
 .VPNavBarSocialLinks::before {
     height: unset !important;
 }
-
+.VPContent.is-home{
+    padding: 0;
+}
+.is-home>.VPHome>.vp-doc{
+    padding: 0;
+}
 html {
     scroll-behavior: smooth;
 }

@@ -19,7 +19,7 @@ export default defineConfig({
     logo:'/logo.ico',
     outline:[1,3],
     nav: [
-      { text: '首页实现', link: '/首页/粒子效果' },
+      { text: '粒子效果', link: '/首页/粒子效果' },
       { text: '友链', link: '/' },
     ],
     search: {
