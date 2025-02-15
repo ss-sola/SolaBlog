@@ -1,4 +1,5 @@
-
+const Http = require("http");
+const proxyImg = require('proxyImg')
 
 const meta = {
     name: '琉璃影院',
@@ -6,13 +7,19 @@ const meta = {
     priority: 10,
     from: 'https://www.liuliyy.fun/'
 }
-
+const headers = {
+    "Host": "www.liuliyy.fun",
+    "referer": "https://www.liuliyy.fun/",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.1724.58"
+}
 
 const search = async function (title, page) {
     const modelData = []
     title = title.replaceAll(" ", "")
     var url = meta.from + "/vodsearch/" + title + "----------" + page + "---.html"
-    var res = await fetch(url)
+    var res = await fetch(url, {
+        headers: headers
+    })
 
     const parser = new DOMParser();
     const doc = parser.parseFromString(await res.text(), "text/html");
@@ -22,7 +29,11 @@ const search = async function (title, page) {
         const aTag = item.querySelector('a')
         var code = aTag.getAttribute('href').match(/\d+/g)[0]
         var tag = aTag.querySelector('.pic-text').textContent
-        var img = 'https://images.weserv.nl/?url=' + aTag.getAttribute('data-original')
+        let u = aTag.getAttribute('data-original')
+        if (!u.startsWith('http')) {
+            u = 'http:' + u
+        }
+        var img = await proxyImg(u)
         var title = item.querySelector('.title').textContent
 
         const obj = {
@@ -38,9 +49,11 @@ const search = async function (title, page) {
         data: modelData
     }
 }
+
+
 async function getDetailData(item) {
     const url = meta.from + `voddetail/${item.id}.html`
-    let res = await fetch(url)
+    let res = await fetch(url, { headers: headers })
     if (!res || res.status !== 200) throw new Error(meta.name + '请求失败')
 
     const parser = new DOMParser()
@@ -95,7 +108,7 @@ const play = async function (option) {
         }
     }
 
-    const res = await fetch(meta.from + url)
+    const res = await fetch(meta.from + url, { headers: headers })
     if (!res || res.status !== 200) throw new Error(meta.name + '请求失败')
     const data = await res.text()
 
@@ -114,7 +127,6 @@ module.exports = {
     author: 'MetaSola',
     name: meta.name,
     version: 1.0,
-    srcUrl:"https://blog.metasola.cn/freemovie/plug/llyy.js",
     getDetailData: getDetailData,
     search: search,
     play: play

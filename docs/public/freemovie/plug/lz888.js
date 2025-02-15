@@ -22,6 +22,9 @@ const search = async function (title) {
         var img = item.querySelector('img').getAttribute('data-original')
         var title = item.querySelector('.module-card-item-title').textContent
 
+        if (!img.startsWith('http')) {
+            img = meta.from + img
+        }
         const obj = {
             platform: meta.from,
             title: title,
@@ -80,6 +83,7 @@ async function getDetailData(item) {
     item.line = line
     return item
 }
+
 const play = async function (option) {
 
     let url = ''
@@ -98,15 +102,9 @@ const play = async function (option) {
 
 
     var resourseUrl = cachePattern.exec(data)[1].replaceAll('\\', '')
-
-
-
     return {
         url: resourseUrl
     }
-
-
-
 }
 
 
@@ -114,7 +112,6 @@ module.exports = {
     author: 'MetaSola',
     name: meta.name,
     version: 1.0,
-    srcUrl:"https://blog.metasola.cn/freemovie/plug/lz888.js",
     getDetailData: getDetailData,
     search: search,
     play: play
