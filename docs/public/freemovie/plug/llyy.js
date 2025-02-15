@@ -127,6 +127,7 @@ module.exports = {
     author: 'MetaSola',
     name: meta.name,
     version: 1.0,
+    srcUrl:"https://blog.metasola.cn/freemovie/plug/llyy.js",
     getDetailData: getDetailData,
     search: search,
     play: play
