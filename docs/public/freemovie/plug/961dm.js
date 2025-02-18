@@ -98,14 +98,7 @@ async function getDetailData(item) {
   return item
 }
 
-const play = async function (option) {
-  let url = ''
-  const total = option.line[option.activeLine].total
-  for (let i = 0; i < total.length; i++) {
-    if (total[i].html == option.activeNumber) {
-      url = total[i].href
-    }
-  }
+const play = async function (url, option) {
 
   const res = await fetch(meta.from + url)
   if (!res || res.status !== 200) throw new Error(meta.name + '请求失败')
@@ -154,10 +147,10 @@ const play = async function (option) {
 // AES解密函数
 function aesDecrypt(ciphertext, key, iv) {
   return CryptoJS['AES']
-    ['decrypt'](ciphertext, key, {
-      iv: iv
-    })
-    ['toString'](CryptoJS['enc']['Utf8'])
+  ['decrypt'](ciphertext, key, {
+    iv: iv
+  })
+  ['toString'](CryptoJS['enc']['Utf8'])
 }
 
 function getElementTextWithoutChildren(element) {
@@ -178,8 +171,8 @@ function getElementTextWithoutChildren(element) {
 module.exports = {
   author: 'MetaSola',
   name: meta.name,
+  from: meta.from,
   version: 1.0,
-  srcUrl:"https://blog.metasola.cn/freemovie/plug/961dm.js",
   getDetailData: getDetailData,
   search: search,
   play: play

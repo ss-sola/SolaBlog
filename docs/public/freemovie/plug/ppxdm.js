@@ -78,7 +78,7 @@ const initRotationData = async function () {
   function getBackImg(dom) {
     // 获取背景图片地址
     var backgroundImage = dom.style.backgroundImage;
-    console.log("1", backgroundImage);
+
     // 清理背景图片地址字符串（去除引号和空格）
     const urlRegex = /url\((['"]?)(.*?)\1\)/;
     const match = backgroundImage.match(urlRegex);
@@ -144,7 +144,7 @@ async function search(query) {
   const modelData = [];
   var res = await fetch(url);
   if (!res || res.status !== 200) throw new Error(meta.name + "请求失败");
-  console.log(res);
+
   const parser = new DOMParser();
   const doc = parser.parseFromString(await res.text(), "text/html");
   const aTag = doc.querySelectorAll("a.module-card-item-poster");
@@ -169,18 +169,12 @@ async function search(query) {
     data: modelData,
   };
 }
-async function play(option) {
-  let url = "";
-  const total = option.line[option.activeLine].total;
-  for (let i = 0; i < total.length; i++) {
-    if (total[i].html == option.activeNumber) {
-      url = total[i].href;
-    }
-  }
+async function play(url, option) {
 
   const res = await fetch(meta.from + url);
   if (!res || res.status !== 200) throw new Error(meta.name + "请求失败");
   const data = await res.text();
+
   if (option.activeLine == "新一线") {
     return await newPlay(data);
   } else {
@@ -188,10 +182,11 @@ async function play(option) {
   }
 }
 async function defaultPlay(data) {
-  var docStr = data.replaceAll(/[\s\n]+/g, "");
+  var docStr = data
 
   var pattern = /"url":"(.*?)","url_next"/g;
   var parameter = pattern.exec(docStr)[1];
+
   parameter = unescape(base64decode(parameter));
   return {
     url: parameter,
@@ -199,10 +194,10 @@ async function defaultPlay(data) {
 }
 async function newPlay(data) {
   //获取播放地址
-  var docStr = data.replaceAll(/[\s\n]+/g, "");
 
   var pattern = /"url":"(.*?)","url_next"/g;
-  var parameter = pattern.exec(docStr)[1];
+  var parameter = pattern.exec(data)[1];
+
   parameter = unescape(base64decode(parameter));
   var exceUrl = "https://plays.ppxdm.co/player/ec.php?code=qw&url=" + parameter;
 
@@ -214,7 +209,7 @@ async function newPlay(data) {
   });
   if (!cacheRes || cacheRes.status !== 200)
     throw new Error(meta.name + "请求失败");
-  docStr = cacheRes.data.replaceAll(/[\s\n]+/g, "");
+  var docStr = cacheRes.data
 
   pattern = /"url":"(.*?)"/g;
   var ddd = pattern.exec(docStr);
@@ -296,6 +291,7 @@ function base64decode(str) {
 module.exports = {
   author: 'MetaSola',
   name: meta.name,
+  from: meta.from,
   version: 1.0,
   srcUrl: "https://blog.metasola.cn/freemovie/plug/ppxdm.js",
   initWeekData: initWeekData,
