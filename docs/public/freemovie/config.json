@@ -1,11 +1,13 @@
 {
-  "version":"0.1.2",
+  "version":"0.2.0",
   "name":"FreeMovie",
   "description":"FreeMovie",
   "author":"MetaSola",
   "url":"https://blog.metasola.cn/freemovie/FreeMovie.apk",
   "license":"MIT",
   "content":[
-      "添加了播放详情和状态"
+      "使用定制化的播放器",
+      "优化了插件系统",
+      "优化了fetch请求超时"
     ]
 }
