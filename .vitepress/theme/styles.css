@@ -39,6 +39,7 @@
 }
 .is-home>.VPHome>.vp-doc{
     padding: 0;
+    margin: unset;
 }
 html {
     scroll-behavior: smooth;
@@ -51,4 +52,7 @@ html.dark .logo {
 }
 .aside{
     padding-left: 0 !important;
+}
+.container{
+    margin: unset;
 }

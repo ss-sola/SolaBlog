@@ -20,6 +20,7 @@ export default defineConfig({
     outline:[1,3],
     nav: [
       { text: '粒子效果', link: '/首页/粒子效果' },
+      { text: 'FreeMovie', link: '/FreeMovie/使用指南' },
       { text: '友链', link: '/' },
     ],
     search: {
