@@ -5,6 +5,7 @@ import AutoSidebarPlugin from 'vitepress-auto-sidebar-plugin'
 export default defineConfig({
   title: "SolaBlog",
   description: "SolaBlog",
+  appearance:'dark',
   head: [
     ['link', { rel: 'icon', href: '/logo.ico' }]
   ],
@@ -13,6 +14,7 @@ export default defineConfig({
   sitemap:{
     hostname: 'https://blog.metasola.cn/'
   },
+  ignoreDeadLinks: true,
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
