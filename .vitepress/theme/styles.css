@@ -56,3 +56,15 @@ html.dark .logo {
 .container{
     margin: unset;
 }
+
+
+.custom-hidden .VPNav,
+.custom-hidden .VPLocalNav,
+.custom-hidden .VPDocFooter,
+.custom-hidden aside,
+.custom-hidden .aside-container {
+  display: none !important;
+}
+.custom-hidden .VPContent{
+    font-size: .8em;
+}
