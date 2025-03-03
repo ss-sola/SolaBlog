@@ -41,9 +41,6 @@
     padding: 0;
     margin: unset;
 }
-html {
-    scroll-behavior: smooth;
-}
 
 /* 当页面处于深色主题时（html 有 class="dark"） */
 html.dark .logo {
@@ -65,6 +62,6 @@ html.dark .logo {
 .custom-hidden .aside-container {
   display: none !important;
 }
-.custom-hidden .VPContent{
+.custom-hidden .VPDoc{
     font-size: .8em;
 }

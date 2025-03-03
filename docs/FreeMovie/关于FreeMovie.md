@@ -1,9 +1,37 @@
 ---
 index: 2
 title: 关于 FreeMovie
-hide: true
 ---
 
+<script setup>
+import { onMounted,onUnmounted } from "vue";
+const hideArr=['.VPNav','.VPLocalNav','.VPDocFooter','aside','.aside-container']
+let isDark = false;
+onMounted(() => {
+    if(document.documentElement.classList.contains('dark')){
+        isDark = true;
+        document.documentElement.classList.remove('dark')
+    }
+    hideArr.forEach((item) => {
+        document.querySelector(`${item}`).style.display = 'none';
+    })
+    document.querySelector('.VPDoc').style.fontSize = '.8em';
+    document.documentElement.style.opacity = "1";
+})
+onUnmounted(() => {
+    hideArr.forEach((item) => {
+        document.querySelector(`${item}`).style.display = 'block';
+    })
+    document.querySelector('.VPDoc').style.fontSize = '1em';
+    if(isDark){
+        document.documentElement.classList.add('dark')
+    }
+})
+
+</script>
+<style module>
+
+</style>
 
 本软件作者为MetaSola。软件为开源免费，如果你下载到了付费版本，请勿相信，并联系作者进行举报。
 
