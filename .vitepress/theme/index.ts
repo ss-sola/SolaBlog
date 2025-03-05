@@ -11,15 +11,6 @@ export default {
   enhanceApp({ app,router }) {
     /**@ts-ignore */
     if (import.meta.env.SSR) return; // 避免 SSR 访问 document
-    console.log(router)
-    //监听每次路由变化后触发
-    router.onAfterRouteChanged = (to: any) => {
-      if (includeOnlyMd(to)) {
-        document.documentElement.classList.add('custom-hidden');
-        document.documentElement.classList.remove('dark')
-      } else {
-        document.documentElement.classList.remove('custom-hidden');
-      }
-    };
+    
   }
 }

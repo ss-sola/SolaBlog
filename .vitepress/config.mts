@@ -5,7 +5,7 @@ import AutoSidebarPlugin from 'vitepress-auto-sidebar-plugin'
 export default defineConfig({
   title: "SolaBlog",
   description: "SolaBlog",
-  // appearance:'dark',
+  appearance:'dark',
   head: [
     ['link', { rel: 'icon', href: '/logo.ico' }]
   ],
