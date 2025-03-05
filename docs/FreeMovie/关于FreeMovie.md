@@ -1,6 +1,7 @@
 ---
 index: 2
 title: 关于 FreeMovie
+hide: true
 ---
 
 <script setup>
@@ -32,7 +33,9 @@ onUnmounted(() => {
 
 项目开源地址:[https://github.com/ss-sola/FreeMovie](https://github.com/ss-sola/FreeMovie)，本项目基于Apache-2.0协议开源，请勿用于商业用途。打包和二次开发请保留代码出处。
 
+最新版下载地址:[https://blog.metasola.cn/freemovie/FreeMovie.apk](https://blog.metasola.cn/freemovie/FreeMovie.apk)
 
+插件试用地址:[https://blog.metasola.cn/freemovie/source.json](https://blog.metasola.cn/freemovie/source.json)
 ### 免责声明
 
 本软件仅用于学习交流，软件所有数据均来自插件，与本软件无关，作者不承担任何责任。播放过程中的广告均为视频内部嵌入，请勿相信。
