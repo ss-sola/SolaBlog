@@ -363,7 +363,12 @@ function getDocument(text) {
     const doc = parser.parseFromString(text, "text/html");
     return doc
 }
-
+const play = async function (url, option) {
+    const res = await analysis({ url: url })
+    return {
+        url: res.videoUrl
+    }
+}
 
 module.exports = {
     author: 'MetaSola',
@@ -373,4 +378,5 @@ module.exports = {
     srcUrl: "https://blog.metasola.cn/freemovie/plug/dldl.js",
     getDetailData: getDetailData,
     search: search,
+    play: play,
 };
