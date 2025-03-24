@@ -1,4 +1,4 @@
-
+const analysis = require('analysis')
 
 const meta = {
     name: '风铃动漫',
