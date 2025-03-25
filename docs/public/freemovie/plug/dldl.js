@@ -1,5 +1,6 @@
 const Http = require('http')
 const proxyImg = require('proxyImg')
+const analysis = require('analysis')
 const meta = {
     name: '嘀哩嘀哩',
     available: true,
