@@ -1,10 +1,21 @@
 [
     {
+        "version":"0.1.0",
+        "name":"FreeMovie",
+        "description":"FreeMovie",
+        "author":"MetaSola",
+        "url":"https://blog.metasola.cn/freemovie/history/FreeMovie-0.1.0.apk",
+        "license":"MIT",
+        "content":[
+            "初始app"
+          ]
+    },
+    {
         "version":"0.1.1",
         "name":"FreeMovie",
         "description":"FreeMovie",
         "author":"MetaSola",
-        "url":"https://blog.metasola.cn/freemovie/FreeMovie.apk",
+        "url":"https://blog.metasola.cn/freemovie/history/FreeMovie-0.1.1.apk",
         "license":"MIT",
         "content":[
             "优化了全屏播放的效果",
@@ -17,10 +28,23 @@
         "name":"FreeMovie",
         "description":"FreeMovie",
         "author":"MetaSola",
-        "url":"https://blog.metasola.cn/freemovie/FreeMovie.apk",
+        "url":"https://blog.metasola.cn/freemovie/history/FreeMovie-0.1.2.apk",
         "license":"MIT",
         "content":[
             "添加了播放详情和状态"
           ]
-    }
+    },
+    {
+        "version":"0.2.0",
+        "name":"FreeMovie",
+        "description":"FreeMovie",
+        "author":"MetaSola",
+        "url":"https://blog.metasola.cn/freemovie/history/FreeMovie-0.2.0.apk",
+        "license":"MIT",
+        "content":[
+            "使用定制化的播放器",
+            "优化了插件系统",
+            "优化了fetch请求超时"
+          ]
+      }
 ]
