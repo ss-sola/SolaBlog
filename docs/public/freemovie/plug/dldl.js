@@ -50,16 +50,16 @@ async function search(query, page) {
     for (var i = 0; i < data.length; i++) {
         var item = data[i];
 
-        const u = item.url
-        if (!u.startsWith('http')) {
-            u = meta.from + u
+        let itemUrl = item.url
+        if (!itemUrl.startsWith('http')) {
+            itemUrl = meta.from + itemUrl
         }
         const obj = {
             platform: meta.from,
             title: item.title,
             img: item.thumb,
-            id: u,
-            url: u,
+            id: itemUrl,
+            url: itemUrl,
             tag: `更新到${item.lianzaijs}集`,
         };
         imgPromises.push(new Promise(async (resolve, reject) => {
@@ -379,5 +379,5 @@ module.exports = {
     srcUrl: "https://blog.metasola.cn/freemovie/plug/dldl.js",
     getDetailData: getDetailData,
     search: search,
-    play: play,
+    play: play
 };
